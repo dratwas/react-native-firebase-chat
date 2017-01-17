@@ -9,11 +9,11 @@ import {
 } from 'react-native';
 
 export default class ReactNativeFirebaseChat extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          {this.chuj}
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js

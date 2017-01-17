@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "flow": "node_modules/.bin/flow"
+    "flow": "node_modules/.bin/flow",
+    "eslint": "node node_modules/eslint/bin/eslint.js src/** -c .eslintrc"
   },
   "dependencies": {
     "firebase": "^3.6.5",
@@ -13,9 +14,17 @@
     "react-native": "0.40.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
-    "flow-bin": "^0.37.4",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "flow-bin": "^0.36.0",
     "jest": "18.1.0",
     "react-test-renderer": "~15.4.0-rc.4"
   },
