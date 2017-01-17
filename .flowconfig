@@ -7,7 +7,6 @@
 
 ; Ignore unexpected extra "@providesModule"
 .*/node_modules/.*/node_modules/fbjs/.*
-.*/node_modules/.*
 
 
 ; Ignore duplicate module providers
@@ -43,4 +42,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 unsafe.enable_getters_and_setters=true
 
 [version]
-^0.37.4
+^0.36.0
