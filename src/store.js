@@ -6,14 +6,14 @@
 
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from './reducers';
+import reducers from './reducers';
 
 
 const middlewares = [thunk];
 
 export function confugureStore(initialState: Object) {
   return createStore(
-    reducer,
+    reducers,
     initialState,
     applyMiddleware(...middlewares),
   );
