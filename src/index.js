@@ -5,11 +5,11 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 export default class ReactNativeFirebaseChat extends Component {
-  render () {
+  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
