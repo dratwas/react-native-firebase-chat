@@ -8,7 +8,10 @@ import {
   View,
 } from 'react-native';
 
-export default class ReactNativeFirebaseChat extends Component {
+import { Provider, connect } from 'react-redux';
+import store from './store';
+
+class ReactNativeFirebaseChat extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -38,4 +41,12 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('ReactNativeFirebaseChat', () => ReactNativeFirebaseChat);
+const ConnectedMainApp = connect(() => ({
+
+}))(ReactNativeFirebaseChat);
+
+AppRegistry.registerComponent('ReactNativeFirebaseChat', () => () => (
+  <Provider store={store}>
+    <ConnectedMainApp />
+  </Provider>
+));
