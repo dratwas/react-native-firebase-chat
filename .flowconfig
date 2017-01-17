@@ -14,6 +14,7 @@
 ; "node_modules/react-native" but in the source repo it is in the root
 .*/Libraries/react-native/React.js
 .*/Libraries/react-native/ReactNative.js
+.*/Libraries/Network/NetInfo.js
 
 [include]
 
@@ -24,6 +25,11 @@ flow/
 
 [options]
 module.system=haste
+
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+esproposal.export_star_as=enable
+esproposal.decorators=ignore
 
 experimental.strict_type_args=true
 
