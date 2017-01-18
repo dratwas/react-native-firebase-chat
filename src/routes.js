@@ -6,7 +6,8 @@ import React from 'react';
 /* $FlowFixMe */
 import { createRouter } from '@exponent/ex-navigation';
 
-import Home from './containers/Home';
+import LoginScreen from './containers/LoginScreen';
+import HomeScreen from './containers/HomeScreen';
 
 const createRoute = (screen: React.Element<*>, title: string) => ({
   render: Router._makeRoute(screen),
@@ -24,7 +25,8 @@ const createRoute = (screen: React.Element<*>, title: string) => ({
 */
 
 const Router = createRouter(() => ({
-  homeScene: () => createRoute(Home, 'Home screen'),
+  loginScene: () => createRoute(LoginScreen, 'Log In'),
+  homeScene: () => ({ render: Router._makeRoute(HomeScreen) }),
 }));
 
 export default Router;

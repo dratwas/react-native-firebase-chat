@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-class Home extends React.Component {
+class LoginScreen extends React.Component {
   render() {
     return (
       <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
@@ -11,4 +11,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default LoginScreen;
