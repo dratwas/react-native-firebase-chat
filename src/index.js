@@ -4,6 +4,7 @@
 
 import React, { Component } from 'react';
 import {
+  StatusBar,
   AppRegistry,
 } from 'react-native';
 import { Provider } from 'react-redux';
@@ -18,6 +19,9 @@ class ReactNativeFirebaseChat extends Component {
   render() {
     return (
       <NavigationProvider router={Router}>
+        <StatusBar
+          barStyle="light-content"
+        />
         <StackNavigation initialRoute={Router.getRoute('homeScene')} />
       </NavigationProvider>
     );

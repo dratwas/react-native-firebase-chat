@@ -9,6 +9,8 @@ import Router from '../routes';
 import Icon from '../components/Icon';
 import HomeButton from '../components/HomeButton';
 
+import { BACKGROUND_DARK_BLUE, CYAN, VIOLET } from '../colors';
+
 type HomeScreenProps = {
   navigator: Function,
 }
@@ -27,9 +29,15 @@ class HomeScreen extends Component {
           <HomeButton
             title="log in"
             onPress={() => (this.props.navigator.push(Router.getRoute('loginScene')))}
-            backgroundColor="#E82754"
+            backgroundColor={CYAN}
+            color={VIOLET}
           />
-          <HomeButton title="sign up" backgroundColor="#3CB2E2" />
+          <HomeButton
+            title="sign up"
+            onPress={() => (this.props.navigator.push(Router.getRoute('loginScene')))}
+            backgroundColor={VIOLET}
+            color={CYAN}
+          />
         </View>
       </View>
     );
@@ -38,7 +46,7 @@ class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F4F01B',
+    backgroundColor: BACKGROUND_DARK_BLUE,
   },
   icon: {
     flex: 1,
