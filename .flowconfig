@@ -7,7 +7,13 @@
 
 ; Ignore unexpected extra "@providesModule"
 .*/node_modules/.*/node_modules/fbjs/.*
-
+# caused by @exponent/ex-navigation
+.*/node_modules/exponent
+.*/node_modules/@exponent/ex-navigation
+.*/node_modules/react-native/Libraries/EventEmitter/EventSubscription.js
+.*/node_modules/react-native/Libraries/EventEmitter/EmitterSubscription.js
+.*/node_modules/react-native/Libraries/EventEmitter/EventSubscriptionVendor.js
+.*/node_modules/react-static-container/lib/StaticContainer.react.js
 
 ; Ignore duplicate module providers
 ; For RN Apps installed via npm, "Libraries" folder is inside
