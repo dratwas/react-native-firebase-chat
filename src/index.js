@@ -41,10 +41,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// const ConnectedMainApp = connect(() => ({
-//
-// }))(ReactNativeFirebaseChat);
-
 AppRegistry.registerComponent('ReactNativeFirebaseChat', () => () => (
   <Provider store={store}>
     <ReactNativeFirebaseChat />
