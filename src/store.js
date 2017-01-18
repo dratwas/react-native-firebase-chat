@@ -11,7 +11,7 @@ import reducers from './reducers';
 
 const middlewares = [thunk];
 
-export function confugureStore(initialState: Object) {
+export function configureStore(initialState: Object) {
   return createStore(
     reducers,
     initialState,
@@ -19,4 +19,4 @@ export function confugureStore(initialState: Object) {
   );
 }
 
-export default confugureStore({});
+export default configureStore({});
