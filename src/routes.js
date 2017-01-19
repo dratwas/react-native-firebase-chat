@@ -9,7 +9,7 @@ import { createRouter } from '@exponent/ex-navigation';
 import LoginScreen from './containers/LoginScreen';
 import HomeScreen from './containers/HomeScreen';
 
-const createRoute = (screen: React.Element<*>, title: string) => ({
+const createRoute = (screen: React.Element<*> | Class<*>, title: string) => ({ // eslint-disable-line
   render: Router._makeRoute(screen),
   config: {
     navigationBar: {
@@ -17,12 +17,6 @@ const createRoute = (screen: React.Element<*>, title: string) => ({
     },
   },
 });
-
-/**
-* This is where we map route names to route components. Any React
-* component can be a route, it only needs to have a static `route`
-* property defined on it, as in HomeScreen below
-*/
 
 const Router = createRouter(() => ({
   loginScene: () => createRoute(LoginScreen, 'Log In'),

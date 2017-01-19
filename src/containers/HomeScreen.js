@@ -10,6 +10,7 @@ import Icon from '../components/Icon';
 import HomeButton from '../components/HomeButton';
 
 import { BACKGROUND_DARK_BLUE, CYAN, VIOLET } from '../colors';
+import { NAVBAR_HEIGHT } from '../constants';
 
 type HomeScreenProps = {
   navigator: Function,
@@ -19,7 +20,7 @@ class HomeScreen extends Component {
   props: HomeScreenProps
 
   render() {
-    const height = Dimensions.get('window').height;
+    const height = Dimensions.get('window').height - NAVBAR_HEIGHT;
     return (
       <View style={[styles.container, { height }]}>
         <View style={styles.icon}>
@@ -34,7 +35,7 @@ class HomeScreen extends Component {
           />
           <HomeButton
             title="sign up"
-            onPress={() => (this.props.navigator.push(Router.getRoute('loginScene')))}
+            onPress={() => (this.props.navigator.push(Router.getRoute('homeScene')))}
             backgroundColor={VIOLET}
             color={CYAN}
           />
