@@ -8,7 +8,6 @@ const navigatorConfig = {
   navigationBar: {
     backgroundColor: BACKGROUND_DARK_BLUE,
     tintColor: WHITE,
-    // titleStyle: { fontFamily: 'Dosis-Bold', color: theme.navigationBar.titleColor },
   },
 };
 

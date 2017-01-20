@@ -20,7 +20,7 @@ type ButtonProps = {
 export default function Button({ children, onPress, style, disabled = false }: ButtonProps) {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={[styles.container, disabled ? styles.enabled : styles.disabled, style]}>
+      <View style={[styles.container, disabled && styles.disabled, style]}>
         <Text style={styles.text}>{children}</Text>
       </View>
     </TouchableOpacity>
@@ -33,12 +33,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     paddingVertical: 15,
     borderRadius: 27,
+    backgroundColor: VIOLET,
   },
   disabled: {
     backgroundColor: FONT_GRAY,
-  },
-  enabled: {
-    backgroundColor: VIOLET,
   },
   text: {
     color: WHITE,

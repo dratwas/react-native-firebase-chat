@@ -55,7 +55,7 @@ class LoginScreen extends Component<void, LoginScreenProps, LoginScreenState> {
         <Button
           style={styles.button}
           onPress={this.logIn}
-          disabled={!!username && !!password}
+          disabled={!username || !password}
         >
           Log In
         </Button>
