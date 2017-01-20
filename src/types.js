@@ -9,4 +9,4 @@ export type Action = {
 
 type ValidStyle = Object | number;
 
-export type Style = ValidStyle | ValidStyle[];
+export type Style = [] | ValidStyle;

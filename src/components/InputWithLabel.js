@@ -11,7 +11,7 @@ import Text from './Text';
 import type { Style } from '../types';
 
 type InputWithLabelProps = {
-  label: string,
+  children?: string,
   value: string,
   onChange: Function,
   placeholder?: string,
@@ -20,7 +20,7 @@ type InputWithLabelProps = {
 }
 
 export default function InputWithLabel({
-  label,
+  children,
   value,
   onChange,
   placeholder,
@@ -29,7 +29,7 @@ export default function InputWithLabel({
 }: InputWithLabelProps) {
   return (
     <View style={[styles.container, style]}>
-      {label && <Text value={label} />}
+      {children && <Text>{children}</Text>}
       <Input style={inputStyle} value={value} onChange={onChange} placeholder={placeholder} />
     </View>
   );
@@ -37,7 +37,7 @@ export default function InputWithLabel({
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     justifyContent: 'flex-start',
   },
 });

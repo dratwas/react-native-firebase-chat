@@ -13,7 +13,7 @@ import { BACKGROUND_DARK_BLUE, CYAN, VIOLET } from '../colors';
 import { NAVBAR_HEIGHT } from '../constants';
 
 type HomeScreenProps = {
-  navigator: Function,
+  navigator: Object,
 }
 
 class HomeScreen extends Component {

@@ -8,3 +8,7 @@ export const VIOLET = '#5B2B82';
 export const WHITE = '#FFFFFF';
 
 export const FONT_GRAY = '#A9A9A9';
+export const FONT_BLACK = '#333333';
+export const FONT_BLUE = '#6E98C7';
+
+export const TRANSPARENT = 'rgba(0, 0, 0, 0)';
