@@ -4,11 +4,13 @@
 
 import React, { Component } from 'react';
 import {
+  StatusBar,
   AppRegistry,
 } from 'react-native';
 import { Provider } from 'react-redux';
 /* $FlowFixMe */
 import { NavigationProvider, StackNavigation } from '@exponent/ex-navigation';
+import navigatorConfig from './navigatorConfig';
 import Router from './routes';
 
 
@@ -18,7 +20,13 @@ class ReactNativeFirebaseChat extends Component {
   render() {
     return (
       <NavigationProvider router={Router}>
-        <StackNavigation initialRoute={Router.getRoute('homeScene')} />
+        <StatusBar
+          barStyle="light-content"
+        />
+        <StackNavigation
+          defaultRouteConfig={navigatorConfig}
+          initialRoute={Router.getRoute('homeScene')}
+        />
       </NavigationProvider>
     );
   }

@@ -9,15 +9,18 @@ import Router from '../routes';
 import Icon from '../components/Icon';
 import HomeButton from '../components/HomeButton';
 
+import { BACKGROUND_DARK_BLUE, CYAN, VIOLET } from '../colors';
+import { NAVBAR_HEIGHT } from '../constants';
+
 type HomeScreenProps = {
-  navigator: Function,
+  navigator: Object,
 }
 
 class HomeScreen extends Component {
   props: HomeScreenProps
 
   render() {
-    const height = Dimensions.get('window').height;
+    const height = Dimensions.get('window').height - NAVBAR_HEIGHT;
     return (
       <View style={[styles.container, { height }]}>
         <View style={styles.icon}>
@@ -27,9 +30,15 @@ class HomeScreen extends Component {
           <HomeButton
             title="log in"
             onPress={() => (this.props.navigator.push(Router.getRoute('loginScene')))}
-            backgroundColor="#E82754"
+            backgroundColor={CYAN}
+            color={VIOLET}
           />
-          <HomeButton title="sign up" backgroundColor="#3CB2E2" />
+          <HomeButton
+            title="sign up"
+            onPress={() => (this.props.navigator.push(Router.getRoute('homeScene')))}
+            backgroundColor={VIOLET}
+            color={CYAN}
+          />
         </View>
       </View>
     );
@@ -38,7 +47,7 @@ class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F4F01B',
+    backgroundColor: BACKGROUND_DARK_BLUE,
   },
   icon: {
     flex: 1,

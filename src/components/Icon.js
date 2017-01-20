@@ -20,8 +20,13 @@ const paths: ImagePaths = {
   chat: require('../../assets/chat.png'),
 };
 
-export default function Icon({ height, width, name, style }: IconProps) {
-  const styles = setIconSize(height, width || DEFAULT_SIZE, DEFAULT_SIZE);
+export default function Icon({
+   height = DEFAULT_SIZE,
+   width = DEFAULT_SIZE,
+   name,
+   style,
+ }: IconProps) {
+  const styles = setIconSize(height, width);
   return (
     <View>
       <Image

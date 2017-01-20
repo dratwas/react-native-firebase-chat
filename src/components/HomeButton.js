@@ -15,14 +15,15 @@ type HomeButtonProps = {
   title: string,
   onPress: Function,
   backgroundColor?: string,
+  color: string,
 };
 
-export default function HomeButton({ title, onPress, backgroundColor }: BasicButtonProps) {
+export default function HomeButton({ title, onPress, backgroundColor, color }: HomeButtonProps) {
   const width = Dimensions.get('window').width;
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={[styles.button, { width }, backgroundColor && { backgroundColor }]}>
-        <Text style={styles.buttonText}>{title.toUpperCase()}</Text>
+        <Text style={[styles.buttonText, color && { color }]}>{title.toUpperCase()}</Text>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -35,6 +36,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 24,
   },
 });
