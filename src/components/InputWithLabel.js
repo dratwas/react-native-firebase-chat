@@ -26,11 +26,18 @@ export default function InputWithLabel({
   placeholder,
   style,
   inputStyle,
+  ...passProps
 }: InputWithLabelProps) {
   return (
     <View style={[styles.container, style]}>
-      {children && <Text>{children}</Text>}
-      <Input style={inputStyle} value={value} onChange={onChange} placeholder={placeholder} />
+      {children && <Text style={styles.text}>{children}</Text>}
+      <Input
+        style={inputStyle}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        {...passProps}
+      />
     </View>
   );
 }
@@ -39,5 +46,8 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 15,
     justifyContent: 'flex-start',
+  },
+  text: {
+    fontWeight: 'bold',
   },
 });

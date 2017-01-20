@@ -8,7 +8,7 @@ import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import Text from './Text';
 
 import type { Style } from '../types';
-import { FONT_GRAY, CYAN, TRANSPARENT, WHITE } from '../colors';
+import { FONT_GRAY, VIOLET, TRANSPARENT, WHITE } from '../colors';
 
 type ButtonProps = {
   children?: string,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: FONT_GRAY,
   },
   enabled: {
-    backgroundColor: CYAN,
+    backgroundColor: VIOLET,
   },
   text: {
     color: WHITE,

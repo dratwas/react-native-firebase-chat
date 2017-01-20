@@ -67,6 +67,7 @@ class LoginScreen extends Component<void, LoginScreenProps, LoginScreenState> {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
+    marginTop: 40,
   },
   textLink: {
     marginVertical: 20,
