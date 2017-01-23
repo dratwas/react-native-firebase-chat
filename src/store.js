@@ -7,9 +7,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
+import firebase from './firebase';
 
 
-const middlewares = [thunk];
+const middlewares = [thunk, firebase];
 
 export function configureStore(initialState: Object) {
   return createStore(

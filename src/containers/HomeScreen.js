@@ -35,7 +35,7 @@ class HomeScreen extends Component {
           />
           <HomeButton
             title="sign up"
-            onPress={() => (this.props.navigator.push(Router.getRoute('homeScene')))}
+            onPress={() => (this.props.navigator.push(Router.getRoute('signupScene')))}
             backgroundColor={VIOLET}
             color={CYAN}
           />
