@@ -1,3 +1,7 @@
+/*
+** @flow
+*/
+
 import * as firebase from 'firebase';
 import {
   CREATE_USER_REQUEST,
@@ -14,7 +18,7 @@ const config = {
   messagingSenderId: '236727844854',
 };
 
-const firebaseMiddleware = store => next => action => {
+const firebaseMiddleware = (store: Object) => (next: Function) => (action: Object) => {
   if (action.type === 'INITIALIZE_APP') {
     firebase.initializeApp(config);
     next(action);

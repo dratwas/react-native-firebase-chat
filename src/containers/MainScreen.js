@@ -1,3 +1,7 @@
+/*
+** @flow
+*/
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -11,7 +15,7 @@ type MainScreenProps = {
   user: User,
 }
 
-class MainScreen extends Component<void, MainScreenProps, []> {
+class MainScreen extends Component<void, MainScreenProps, void> {
   props: MainScreenProps
   render() {
     return (
