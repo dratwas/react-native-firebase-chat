@@ -5,7 +5,7 @@
 import {
   // CREATE_USER_REQUEST,
   CREATE_USER_SUCCESS,
-  // CREATE_USER_FAILED,
+  LOGIN_USER_SUCCESS,
 } from '../actions/auth';
 import type { AuthState, Action } from '../types';
 
@@ -16,7 +16,12 @@ const initialState: AuthState = {
 export default function authReducer(state: AuthState = initialState, action: Action):AuthState {
   switch (action.type) {
     case CREATE_USER_SUCCESS: {
-      console.log(action, 'action');
+      return {
+        ...state,
+        user: action.payload,
+      };
+    }
+    case LOGIN_USER_SUCCESS: {
       return {
         ...state,
         user: action.payload,
@@ -26,7 +31,4 @@ export default function authReducer(state: AuthState = initialState, action: Act
   return state;
 }
 
-export const getUser = (state: AuthState) => {
-  console.log(state, 'staet');
-  return state.user;
-};
+export const getUser = (state: AuthState) => state.user;

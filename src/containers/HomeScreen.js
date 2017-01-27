@@ -4,10 +4,14 @@
 
 import React, { Component } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
+import { connect } from 'react-redux';
 
 import Router from '../routes';
 import Icon from '../components/Icon';
 import HomeButton from '../components/HomeButton';
+
+import { getUser } from '../reducers';
+import type { State } from '../types';
 
 import { BACKGROUND_DARK_BLUE, CYAN, VIOLET } from '../colors';
 import { NAVBAR_HEIGHT } from '../constants';
@@ -60,4 +64,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default connect(
+  (state: State) => ({
+    activeUser: getUser(state),
+  }),
+)(HomeScreen);

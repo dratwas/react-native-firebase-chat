@@ -17,24 +17,23 @@ import type { State, User } from './types';
 
 type ReactNativeFirebaseChatProps = {
   isLoggedIn: User,
+  navigator: Object,
 }
 class ReactNativeFirebaseChat extends Component {
   props: ReactNativeFirebaseChatProps
   componentDidMount() {
     store.dispatch(initFirebase());
   }
+
   render() {
-    const initialRoute = this.props.isLoggedIn ? Router.getRoute('mainScene') : Router.getRoute('homeScene');
-    console.log(this.props.isLoggedIn, 'this.props.isLoggedIn');
-    return this.props.isLoggedIn ?
-      (<StackNavigation
+    return (
+      <StackNavigation
+        id="root"
+        navigatorUID="root"
         defaultRouteConfig={navigatorConfig}
-        initialRoute={Router.getRoute('mainScene')}
-      />) : (
-        <StackNavigation
-          defaultRouteConfig={navigatorConfig}
-          initialRoute={Router.getRoute('homeScene')}
-        />);
+        initialRoute={Router.getRoute('homeScene')}
+      />
+    );
   }
 }
 const ConnectedView = connect(

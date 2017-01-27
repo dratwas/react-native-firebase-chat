@@ -4,16 +4,23 @@
 
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
-import Router from '../routes';
 import Container from '../components/Container';
 import InputWithLabel from '../components/InputWithLabel';
 import Button from '../components/Button';
 
+import AfterLoginRedirect from './AfterLoginRedirect';
+
 import { createUserRequest } from '../actions';
+import { getUser } from '../reducers';
 import store from '../store';
 
+
+import type { User, State } from '../types';
+
 type SignupScreenProps = {
+  activeUser: User,
   navigator: Object,
 }
 type SignupScreenState = {
@@ -49,9 +56,13 @@ class SignupScreen extends Component<void, SignupScreenProps, SignupScreenState>
 
   render() {
     const { email, displayName, password, repassword } = this.state;
+    if (this.props.activeUser) {
+      return <AfterLoginRedirect navigation={this.props.navigator} />;
+    }
+
     return (
       <Container style={styles.container}>
-        <InputWithLabel onChange={this.setEmail} value={email}>
+        <InputWithLabel clearButtonMode="while-editing" onChange={this.setEmail} value={email}>
           EMAIL ADDRESS
         </InputWithLabel>
         <InputWithLabel onChange={this.setDisplayName} value={displayName}>
@@ -88,4 +99,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignupScreen;
+export default connect(
+  (state: State) => ({
+    activeUser: getUser(state),
+  }),
+)(SignupScreen);
